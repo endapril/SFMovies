@@ -85,9 +85,9 @@
                     for (var i = 0; i < response.length; i++) {
                         var address = (response[i].Locations == null) ? 'San Francisco, CA' : response[i].Locations + ', San Francisco, CA';
                         addMarker(address);
-                        $('#records_table').DataTable().row.add([response[i].Title, response[i].Release_Year, response[i].Production_Company, response[i].Director, response[i].Distributor, response[i].Actor_1, response[i].Locations])
-                            .draw();
+                        $('#records_table').DataTable().row.add([response[i].Title, response[i].Release_Year, response[i].Production_Company, response[i].Director, response[i].Distributor, response[i].Actor_1, response[i].Locations]);
                     }
+                    $('#records_table').DataTable().draw();
                 },
                 error: function (message) {
                     alert("Server Error");
